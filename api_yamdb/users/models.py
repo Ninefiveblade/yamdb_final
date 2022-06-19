@@ -2,8 +2,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
-from django.db import models
 from django.conf import settings
+from django.db import models
 
 
 class YamDBUser(AbstractUser):
