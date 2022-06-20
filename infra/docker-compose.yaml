@@ -8,8 +8,7 @@ services:
     env_file:
       - ./.env
   web:
-    build:
-      image: ninefiveblade/infra_actions
+    image: ninefiveblade/infra_actions:latest
     restart: always
     volumes:
       - static_value:/app/static/
