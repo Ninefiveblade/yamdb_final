@@ -2,7 +2,7 @@
 from django.contrib import admin
 
 from users.models import YamDBUser
-from .models import Title, Review, Category, Genre, Comment
+from .models import Category, Comment, Genre, Review, Title
 
 
 class TitleAdmin(admin.ModelAdmin):

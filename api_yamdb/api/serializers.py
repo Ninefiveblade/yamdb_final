@@ -1,6 +1,6 @@
 """Сериализаторы приложения API."""
-from rest_framework import serializers
 from django.db import transaction
+from rest_framework import serializers
 
 from reviews import models
 from users.models import YamDBUser

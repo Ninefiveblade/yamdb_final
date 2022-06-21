@@ -1,6 +1,6 @@
 """Кастомные настройки пагинации приложения API."""
-from rest_framework.pagination import PageNumberPagination
 from django.conf import settings
+from rest_framework.pagination import PageNumberPagination
 
 
 class ApiPagination(PageNumberPagination):

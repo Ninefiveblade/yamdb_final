@@ -1,8 +1,8 @@
 """Файл загрузки даных в базу данных проекта."""
 import csv
 
-from django.core.management.base import BaseCommand
 from django.conf import settings
+from django.core.management.base import BaseCommand
 
 from reviews import models
 from users.models import YamDBUser

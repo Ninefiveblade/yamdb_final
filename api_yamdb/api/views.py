@@ -1,21 +1,20 @@
 """Вью классы приложения API."""
-from rest_framework import viewsets, status
-from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.tokens import default_token_generator
-from rest_framework import filters
+from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .mixins import GenreCategoryCreateRetrieve
-from .permissions import IsAdminOrReadOnly, IsStaffOrOwner, IsAdmin
-from users.models import YamDBUser
 from reviews import models
-from .pagination import ApiPagination
-from .filters import TitleFilter
+from users.models import YamDBUser
 from . import serializers
+from .filters import TitleFilter
+from .mixins import GenreCategoryCreateRetrieve
+from .pagination import ApiPagination
+from .permissions import IsAdmin, IsAdminOrReadOnly, IsStaffOrOwner
 
 
 class TitleViewSet(viewsets.ModelViewSet):
