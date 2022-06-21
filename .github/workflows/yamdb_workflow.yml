@@ -1,12 +1,5 @@
-name: CICD
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-  workflow_dispatch:
-
+name: yamdb
+on: [push]
 jobs:
   tests:
     runs-on: ubuntu-latest
