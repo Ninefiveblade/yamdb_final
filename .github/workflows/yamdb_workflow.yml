@@ -52,7 +52,7 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
-            ./script.sh
+            sudo ./script.sh
             sudo docker-compose up -d
             sudo docker-compose exec -T web python manage.py makemigrations
             sudo docker-compose exec -T web python manage.py migrate
