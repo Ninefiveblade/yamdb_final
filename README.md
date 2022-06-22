@@ -28,6 +28,9 @@ POSTGRES_PASSWORD= "your passeord"
 DB_HOST="your container name"
 DB_PORT=5432 
 ```
+## Запустить демо можно по адресу:
+
+```http://51.250.70.206/redoc/```
 
 ## Запуск тестов:
 
