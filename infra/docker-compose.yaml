@@ -8,8 +8,7 @@ services:
     env_file:
       - ./.env
   web:
-    build: ../api_yamdb
-    # image: ninefiveblade/yamdb_final:v2
+    image: ninefiveblade/yamdb_final:v2
     restart: always
     volumes:
       - static_value:/app/static/
