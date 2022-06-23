@@ -50,10 +50,12 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
+          envs: SECRET_ENV
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
             sudo docker-compose up -d
+            echo $SECRET_ENV | base64 -d > .env
             sudo docker-compose exec -T web python manage.py makemigrations
             sudo docker-compose exec -T web python manage.py migrate
             sudo docker-compose exec -T web python manage.py collectstatic --no-input
