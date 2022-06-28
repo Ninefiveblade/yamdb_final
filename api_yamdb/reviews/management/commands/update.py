@@ -15,7 +15,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             with open(
-                f'{data[0]}category.csv'
+                f'{data}/category.csv'
             ) as table:
                 reader = csv.DictReader(table)
                 models.Category.objects.all().delete()
@@ -26,9 +26,7 @@ class Command(BaseCommand):
                         slug=row['slug'],
                     )
                 print('Category upload ready')
-            with open(
-                f'{data[0]}genre.csv'
-            ) as table:
+            with open(f'{data}/genre.csv') as table:
                 reader = csv.DictReader(table)
                 models.Genre.objects.all().delete()
                 for row in reader:
@@ -39,7 +37,7 @@ class Command(BaseCommand):
                     )
                 print('Genre upload ready')
             with open(
-                f'{data[0]}titles.csv'
+                f'{data}/titles.csv'
             ) as table:
                 reader = csv.DictReader(table)
                 models.Title.objects.all().delete()
@@ -52,7 +50,7 @@ class Command(BaseCommand):
                     )
                 print('Title upload ready')
             with open(
-                f'{data}genre_title.csv'
+                f'{data}/genre_title.csv'
             ) as table:
                 reader = csv.DictReader(table)
                 models.Title.genre.through.objects.all().delete()
@@ -64,7 +62,7 @@ class Command(BaseCommand):
                     )
                 print('GenreTitle upload ready')
             with open(
-                f'{data[0]}users.csv'
+                f'{data}/users.csv'
             ) as table:
                 reader = csv.DictReader(table)
                 YamDBUser.objects.all().delete()
@@ -80,7 +78,7 @@ class Command(BaseCommand):
                     )
                 print('YamDBUser upload ready')
             with open(
-                f'{data[0]}review.csv'
+                f'{data}/review.csv'
             ) as table:
                 reader = csv.DictReader(table)
                 models.Review.objects.all().delete()
@@ -95,7 +93,7 @@ class Command(BaseCommand):
                     )
                 print('Review upload ready')
             with open(
-                f'{data[0]}comments.csv'
+                f'{data}/comments.csv'
             ) as table:
                 reader = csv.DictReader(table)
                 models.Comment.objects.all().delete()
