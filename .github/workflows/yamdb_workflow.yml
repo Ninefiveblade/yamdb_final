@@ -56,6 +56,7 @@ jobs:
             touch .env
             echo ${{ secrets.SECRET_ENV }} | base64 -di > .env
             sudo docker-compose up -d
+            sudo docker-compose run --rm certbot renew
             sudo docker-compose exec -T web python manage.py makemigrations
             sudo docker-compose exec -T web python manage.py migrate
             sudo docker-compose exec -T web python manage.py collectstatic --no-input
